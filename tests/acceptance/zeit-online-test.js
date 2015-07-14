@@ -14,10 +14,9 @@ module('Acceptance | zeit online', {
   }
 });
 
-test('visiting /zeit-online', function(assert) {
+test('shows 3 articles', function(assert) {
   visit('/zeit-online');
-
   andThen(function() {
-    assert.equal(currentURL(), '/zeit-online');
+    assert.equal(find('article').length, 3, 'has 3 articles');
   });
 });

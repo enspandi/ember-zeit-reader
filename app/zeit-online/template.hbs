@@ -1,1 +1,10 @@
 {{outlet}}
+{{#each model as |article|}}
+  <article>
+    <a href="{{article.href}}">
+      <h2>{{article.title}}</h2>
+      <p>{{article.timeAgo}}</p>
+      <p>{{article.href}}</p>
+    </a>
+  </article>
+{{/each}}
