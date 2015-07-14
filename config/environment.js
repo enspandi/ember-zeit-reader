@@ -33,7 +33,7 @@ module.exports = function(environment) {
       'script-src': "'self'",
       'font-src': "'self'",
       'font-src': "'self'",
-      'connect-src': "'self' http://api.zeit.de/product/zede",
+      'connect-src': "'self' http://api.zeit.de/",
       'img-src': "'self'",
       'style-src': "'self'",
       'media-src': "'self'"

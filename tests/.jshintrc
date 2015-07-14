@@ -19,6 +19,7 @@
     "wait",
     "DS",
     "Ember",
+    "moment",
     "andThen",
     "currentURL",
     "currentPath",

@@ -20,3 +20,10 @@ test('shows 10 articles', function(assert) {
     assert.equal(find('article').length, 10, 'has 10 articles');
   });
 });
+
+test('shows article details', function(assert) {
+  visit('/zeit-online');
+  andThen(function() {
+    assert.equal(find('article .author').length, 10, 'has 10 authors');
+  });
+});
