@@ -2,7 +2,7 @@ import DS from 'ember-data';
 
 let toMoment = function(dateStr) {
   return moment(dateStr);
-}
+};
 
 export default DS.Transform.extend({
   deserialize: function(serialized) {

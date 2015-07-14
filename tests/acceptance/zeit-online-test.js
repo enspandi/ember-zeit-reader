@@ -24,6 +24,6 @@ test('shows 10 articles', function(assert) {
 test('shows article details', function(assert) {
   visit('/zeit-online');
   andThen(function() {
-    assert.equal(find('article .author').length, 10, 'has 10 authors');
+    assert.equal(find('article .author').length, 7, 'has 7 authors');
   });
 });
