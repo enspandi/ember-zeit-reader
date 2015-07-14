@@ -1,4 +1,5 @@
 /* jshint node: true */
+var zeitApi = require('./zeit-api.json');
 
 module.exports = function(environment) {
   var ENV = {
@@ -16,7 +17,9 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+
+    API_KEY: zeitApi['key']
   };
 
   if (environment === 'development') {

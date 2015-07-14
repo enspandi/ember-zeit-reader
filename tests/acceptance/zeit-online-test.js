@@ -14,9 +14,9 @@ module('Acceptance | zeit online', {
   }
 });
 
-test('shows 3 articles', function(assert) {
+test('shows 10 articles', function(assert) {
   visit('/zeit-online');
   andThen(function() {
-    assert.equal(find('article').length, 3, 'has 3 articles');
+    assert.equal(find('article').length, 10, 'has 10 articles');
   });
 });
