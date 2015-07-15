@@ -1,6 +1,7 @@
 import DS from 'ember-data';
+import ENV from '../config/environment';
 
 export default DS.RESTAdapter.extend({
-  host: 'http://api.zeit.de',
-  namespace: 'product'
+  host: ENV.host,
+  namespace: ENV.namespace
 });
