@@ -1,14 +1,19 @@
-{{outlet}}
-{{#each model as |article|}}
-  <article>
-    <a href="{{article.href}}">
-      <h2>{{article.title}}</h2>
-      <p>
-        <span class="release-date">{{article.timeAgo}}</span>
-        {{#if article.hasAuthors}}
-          von <span class="author">{{article.authorsText}}</span>
-        {{/if}}
-      </p>
-    </a>
-  </article>
-{{/each}}
+{{#ion-header kind='positive'}}
+  <h1 class="title">ZEIT ONLINE</h1>
+{{/ion-header}}
+
+{{#ion-content header=true}}
+  {{#ion-list}}
+    {{#each model as |story|}}
+      <a href="{{story.href}}" class="item">
+        <h2 class="story-title">{{story.title}}</h2>
+        <p>
+          <span>{{story.timeAgo}}</span>
+          {{#if story.hasAuthors}}
+            - <span class="author">{{story.authorsText}}</span>
+          {{/if}}
+        </p>
+      </a>
+    {{/each}}
+  {{/ion-list}}
+{{/ion-content}}

@@ -17,13 +17,13 @@ module('Acceptance | zeit online', {
 test('shows 10 articles', function(assert) {
   visit('/zeit-online');
   andThen(function() {
-    assert.equal(find('article').length, 10, 'has 10 articles');
+    assert.equal(find('.item').length, 10, 'has 10 articles');
   });
 });
 
 test('shows article details', function(assert) {
   visit('/zeit-online');
   andThen(function() {
-    assert.equal(find('article .author').length, 8, 'has 8 authors');
+    assert.equal(find('.author').length, 8, 'has 8 authors');
   });
 });
