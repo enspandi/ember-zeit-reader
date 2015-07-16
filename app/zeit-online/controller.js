@@ -5,12 +5,8 @@ export default Ember.Controller.extend({
 
   actions: {
     loadMore: function() {
-      const offset = this.get('offset') + 10;
-      this.set('offset', offset);
-      this.store.query('article', { articleType: 'zede', offset: offset })
-        .then((newArticles) => {
-          this.set('model', newArticles);
-        })
+      this.incrementProperty('offset', 10);
+      this.send('findByOffset', this.get('offset'));
     }
   }
 });
