@@ -1,8 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model: function() {
-    return this.store.find('article', { articleType: 'zede' });
+  model: function(params) {
+    return this.store.find('article', { articleType: 'zede', offset: params.offset || 0 });
   },
 
   findByOffset: function(offset) {
