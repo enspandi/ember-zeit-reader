@@ -1,22 +1,15 @@
 import Ember from 'ember';
 
+const NEWSPAPER_ARTICLES = 'zei';
+
 export default Ember.Route.extend({
   model: function(params) {
-    return this.store.find('article', { articleType: 'zei', offset: params.offset || 0 });
-  },
-
-  findByOffset: function(offset) {
-    this.store.find('article', { articleType: 'zei', offset: offset })
-      .then(this.setAllArticles.bind(this));
-  },
-
-  setAllArticles: function() {
-    this.set('controller.model', this.store.all('article'));
+    return this.store.queryAndAll('article', { articleType: NEWSPAPER_ARTICLES, offset: params.offset });
   },
 
   actions: {
-    findByOffset: function(offset) {
-      this.findByOffset(offset);
+    refreshArticles: function() {
+      this.refresh();
     }
   }
 });

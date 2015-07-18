@@ -16,5 +16,5 @@
       </a>
     {{/each}}
   {{/ion-list}}
-  <button class="button button-block button-stable" {{action 'loadMore'}}>Mehr Laden</button>
+  {{load-more offset=offset updateModelAction='refreshArticles'}}
 {{/ion-content}}

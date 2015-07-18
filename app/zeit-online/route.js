@@ -1,22 +1,15 @@
 import Ember from 'ember';
 
+const ONLINE_ARTICLES = 'zede';
+
 export default Ember.Route.extend({
   model: function(params) {
-    return this.store.find('article', { articleType: 'zede', offset: params.offset || 0 });
-  },
-
-  findByOffset: function(offset) {
-    this.store.find('article', { articleType: 'zede', offset: offset })
-      .then(this.setAllArticles.bind(this));
-  },
-
-  setAllArticles: function() {
-    this.set('controller.model', this.store.all('article'));
+    return this.store.queryAndAll('article', { articleType: ONLINE_ARTICLES, offset: params.offset });
   },
 
   actions: {
-    findByOffset: function(offset) {
-      this.findByOffset(offset);
+    refreshArticles: function() {
+      this.refresh();
     }
   }
 });
