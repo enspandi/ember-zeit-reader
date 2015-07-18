@@ -32,5 +32,5 @@ module.exports = function(app) {
     res.status(204).end();
   });
 
-  app.use('/api/zede', zeitdeRouter);
+  app.use('/api/*', zeitdeRouter);
 };

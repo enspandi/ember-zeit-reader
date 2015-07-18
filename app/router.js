@@ -7,6 +7,7 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('zeit-online');
+  this.route('die-zeit');
 });
 
 export default Router;
