@@ -9,7 +9,7 @@ moduleForComponent('load-more', 'Integration | Component | load more', {
 test('it renders', function(assert) {
   assert.expect(1);
 
-  this.render(hbs`{{load-more-button}}`);
+  this.render(hbs`{{#load-more-button}}Weitere Artikel{{/load-more-button}}`);
 
-  assert.equal(this.$().text().trim(), 'Mehr Laden');
+  assert.equal(this.$().text().trim(), 'Weitere Artikel');
 });

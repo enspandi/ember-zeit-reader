@@ -16,5 +16,5 @@ export default DS.ActiveModelSerializer.extend({
       item.links = { details: item.uri };
       delete item.uri;
     });
-  },
+  }
 });

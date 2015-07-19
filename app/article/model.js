@@ -8,6 +8,7 @@ export default DS.Model.extend({
   teaserText: DS.attr('string'),
   teaserTitle: DS.attr('string'),
   title: DS.attr('string'),
+  type: DS.attr('string'),
 
   details: DS.belongsTo('articleDetail', { async: true }),
   

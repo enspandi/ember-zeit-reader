@@ -1,11 +1,17 @@
-var articles = require('../fake-data/articles');
+var newspaperArticles = require('../fake-data/newspaper-articles');
+var onlineArticles    = require('../fake-data/online-articles');
+
+var articles = {
+  '/api/zei': newspaperArticles,
+  '/api/zede': onlineArticles
+};
 
 module.exports = function(app) {
   var express = require('express');
   var zeitdeRouter = express.Router();
 
   zeitdeRouter.get('/', function(req, res) {
-    res.send(articles);
+    res.send(articles[req.baseUrl]);
   });
 
   zeitdeRouter.post('/', function(req, res) {

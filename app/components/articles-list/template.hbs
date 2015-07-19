@@ -1,8 +1,10 @@
-{{#ion-content header=true}}
+<ion-content class="scroll-content overflow-scroll has-subheader">
   {{#ion-list}}
     {{#each articles as |article|}}
       {{article-item article=article}}
     {{/each}}
   {{/ion-list}}
-  {{load-more-button on-load-more=(action 'loadMore')}}
-{{/ion-content}}
+  {{#load-more-button on-load-more=(action 'loadMore')}}
+    Weiter Artikel
+  {{/load-more-button}}
+</ion-content>
