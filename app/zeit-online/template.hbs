@@ -2,19 +2,4 @@
   <h1 class="title">ZEIT ONLINE</h1>
 {{/ion-header}}
 
-{{#ion-content header=true}}
-  {{#ion-list}}
-    {{#each model as |story|}}
-      <a href="{{story.href}}" class="item">
-        <h2 class="story-title">{{story.title}}</h2>
-        <p>
-          <span>{{story.timeAgo}}</span>
-          {{#if story.hasAuthors}}
-            - <span class="author">{{story.authorsText}}</span>
-          {{/if}}
-        </p>
-      </a>
-    {{/each}}
-  {{/ion-list}}
-  {{load-more offset=offset updateModelAction='refreshArticles'}}
-{{/ion-content}}
+{{articles-list articles=model offset=offset updateListAction='refreshArticles'}}

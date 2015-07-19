@@ -4,15 +4,21 @@ export default ApplicationSerializer.extend({
   primaryKey: 'uuid',
 
   normalizeResponse: function(store, primaryModelClass, payload, id, requestType, isSingle) {
-    payload.articles = payload.matches;
-    delete payload.matches;
+    this.checkRootKey(payload);
+    this.replaceUriWithLinks(payload.articles);
+    this.removeUnusedProperties(payload);
 
-    payload.articles.forEach(function(article) {
-      article.links = { details: article.uri };
-      delete article.uri;
-    });
+    return this._super(store, primaryModelClass, payload, id, requestType, isSingle);
+  },
 
-    // Remove deprecations
+  checkRootKey: function(payload) {
+    if (payload && payload.hasOwnProperty('matches')) {
+      payload.articles = payload.matches;
+      delete payload.matches;
+    }
+  },
+
+  removeUnusedProperties: function(payload) {
     delete payload.href;
     delete payload.offset;
     delete payload.limit;
@@ -20,7 +26,5 @@ export default ApplicationSerializer.extend({
     delete payload.id;
     delete payload.value;
     delete payload.uri;
-
-    return this._super(store, primaryModelClass, payload, id, requestType, isSingle);
   }
 });

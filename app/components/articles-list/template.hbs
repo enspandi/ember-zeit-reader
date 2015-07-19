@@ -1,0 +1,8 @@
+{{#ion-content header=true}}
+  {{#ion-list}}
+    {{#each articles as |article|}}
+      {{article-item article=article}}
+    {{/each}}
+  {{/ion-list}}
+  {{load-more-button on-load-more=(action 'loadMore')}}
+{{/ion-content}}

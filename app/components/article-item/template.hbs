@@ -1,0 +1,9 @@
+<a href="{{article.href}}" class="item">
+  <h2 class="story-title">{{article.title}}</h2>
+  <p>
+    <span>{{time-ago article.releaseDate}}</span>
+    {{#if article.hasAuthors}}
+      - <span class="author">{{format-array article.authorNames}}</span>
+    {{/if}}
+  </p>
+</a>

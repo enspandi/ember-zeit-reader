@@ -10,14 +10,7 @@ export default DS.Model.extend({
   title: DS.attr('string'),
 
   details: DS.belongsTo('articleDetail', { async: true }),
-
-  authors: Ember.computed.mapBy('details.authors', 'name'),
-  hasAuthors: Ember.computed.gt('authors.length', 0),
-  authorsText: Ember.computed('authors', function() {
-    return this.get('authors').join(' - ');
-  }),
-
-  timeAgo: Ember.computed('releaseDate', function() {
-    return this.get('releaseDate').fromNow();
-  })
+  
+  authorNames: Ember.computed.mapBy('details.authors', 'name'),
+  hasAuthors: Ember.computed.gt('authorNames.length', 0)
 });
